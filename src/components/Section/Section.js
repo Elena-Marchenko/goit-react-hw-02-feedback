@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import FeedbackOptions from '../FeedbackOptions/FeedbackOptions';
 import Statistics from '../Statistics/Statistics';
@@ -35,5 +36,12 @@ const Section = ({
     </div>
   </section>
 );
+
+Section.propTypes = {
+  handleIncrement: PropTypes.func.isRequired,
+  message: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  titleStatistics: PropTypes.string.isRequired,
+};
 
 export default Section;
