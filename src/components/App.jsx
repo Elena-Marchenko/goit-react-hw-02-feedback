@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-// import Section from './Section/Section';
-// import Statistics from './Statistics/Statistics';
+import Section from './Section';
+import Statistics from './Statistics';
 import FeedbackOptions from './FeedbackOptions';
 
 class App extends Component {
@@ -9,16 +9,6 @@ class App extends Component {
     neutral: 0,
     bad: 0,
   };
-
-  // handleIncrementGood = () => {
-  //   this.setState(prevState => ({ good: prevState.good + 1 }));
-  // };
-  // handleIncrementNeutral = () => {
-  //   this.setState(prevState => ({ neutral: prevState.neutral + 1 }));
-  // };
-  // handleIncrementBad = () => {
-  //   this.setState(prevState => ({ bad: prevState.bad + 1 }));
-  // };
 
   handleClick = e => {
     const { name } = e.currentTarget;
@@ -49,28 +39,23 @@ class App extends Component {
     const { good } = this.state;
     const { neutral } = this.state;
     const { bad } = this.state;
+   
 
     return (
       <>
-        <div>
-          <h1>Please leave feedback</h1>
-          <div>
-            <h2>Statistics</h2>
-            <ul>
-              <li>Good:{good}</li>
-              <li>Neutral:{neutral}</li>
-              <li>Bad:{bad}</li>
-              <li>Total:{totalFeedback}</li>
-              <li>Positive Feedback:{positiveFeedback}%</li>
-            </ul>
-          </div>
-        </div>
-        <FeedbackOptions state={this.state} onClick={this.handleClick} />
-        {/* <Section title="">
-          Hallo
-          
-          <FeedbackOptions />
-        </Section> */}
+        <Section title="Please leave feedback">
+          <FeedbackOptions
+            options={this.state}
+            onLeaveFeedback={this.handleClick}
+          />
+          <Statistics
+            good={good}
+            neutral={neutral}
+            bad={bad}
+            total={totalFeedback}
+            positivePercentage={positiveFeedback}
+          />
+        </Section>
       </>
     );
   }
