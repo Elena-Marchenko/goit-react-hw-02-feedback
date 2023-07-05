@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Section from './Section';
 import Statistics from './Statistics';
-import FeedbackOptions from './FeedbackOptions';
+import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
 
 class App extends Component {
   state = {
@@ -39,7 +39,6 @@ class App extends Component {
     const { good } = this.state;
     const { neutral } = this.state;
     const { bad } = this.state;
-   
 
     return (
       <>
