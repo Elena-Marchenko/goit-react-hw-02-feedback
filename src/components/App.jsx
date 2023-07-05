@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Section from './Section';
-import Statistics from './Statistics';
+import Statistics from './Statistics/Statistics';
 import FeedbackOptions from './FeedbackOptions';
 
 class App extends Component {
